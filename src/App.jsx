@@ -10,6 +10,7 @@ import Commits from "./pages/Commits";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Success from "./pages/Success";
+import "dotenv/config";
 
 function App() {
   return (

@@ -26,12 +26,17 @@ const GithubSuccess = () => {
       return;
     }
 
-    fetch("http://localhost:8080/github/login?code=" + code + "&state=12345", {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + token.value,
-      },
-    })
+    fetch(
+      `${process.env.BACKEND_DOMAIN}:8080/github/login?code=` +
+        code +
+        "&state=12345",
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token.value,
+        },
+      }
+    )
       .then((res) => {
         if (!res.ok) throw new Error("Failed to exchange code for token");
         return res.json();

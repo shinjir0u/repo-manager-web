@@ -23,7 +23,7 @@ const Commits = () => {
 
         // Your backend endpoint to get commits for repoId
         const response = await fetch(
-          `http://localhost:8080/repos/shinjir0u/${repo}/commits`,
+          `${process.env.BACKEND_DOMAIN}:8080/repos/shinjir0u/${repo}/commits`,
           {
             headers: {
               Authorization: `Bearer ${user.token.value}`,

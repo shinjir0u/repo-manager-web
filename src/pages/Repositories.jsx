@@ -29,7 +29,7 @@ const Repositories = () => {
     setError(null);
 
     try {
-      const response = await fetch(`${process.env.BACKEND_DOMAIN}:8080/repos`, {
+      const response = await fetch(`http://localhost:8080/repos`, {
         headers: {
           Authorization: `Bearer ${user.token.value}`,
           Accept: "application/json",

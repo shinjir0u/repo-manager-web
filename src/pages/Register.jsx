@@ -38,19 +38,16 @@ const Register = () => {
     }
 
     try {
-      const response = await fetch(
-        `${process.env.BACKEND_DOMAIN}:8080/register`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: formData.email,
-            password: formData.password,
-          }),
-        }
-      );
+      const response = await fetch(`http://localhost:8080/register`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: formData.email,
+          password: formData.password,
+        }),
+      });
 
       if (!response.ok) {
         // You can parse the error message if your backend returns one
